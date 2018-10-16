@@ -39,6 +39,7 @@ body{
   font-weight: bold;
   color: #00a8ff;
 }
+
 #container > #content ul > li > a:hover{
   opacity: 1;
 }
