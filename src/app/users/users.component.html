@@ -1,0 +1,20 @@
+<h1>Users</h1>
+<h4>Click user to see details</h4>
+
+<ul>
+  <li *ngFor="let user of users$">
+    <a routerLink="/details/{{user.id}}">{{ user.name }}</a>
+    <ul>
+      <div class="userDetails">
+          <li>{{ user.email }}</li>
+          <li>{{ user.address.street }}</li>
+          <li>{{ user.address.suite}}, {{ user.address.city }}</li>
+          <div class="innerDetails">
+            <br>
+            <li><a href="http://{{ user.website }}">{{ user.website }}</a></li>
+            <li>{{ user.company.catchPhrase }}</li>
+            <li><h5>Geolocation: {{ user.address.geo.lat }}, {{ user.address.geo.lng }}</h5></li>
+          </div>
+      </div>
+    </ul>
+</ul>
