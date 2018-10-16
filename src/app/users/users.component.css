@@ -23,7 +23,6 @@ body{
 }
 
 #container > #content ul > li{
-  background: red;
   border-radius: 8px;
   padding: 20px;
   margin-bottom: 8px;
