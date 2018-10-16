@@ -15,6 +15,6 @@ nav > ul > li > a{
   display: block;
 }
 
-nav > ul > li > a .activated{
+nav > ul > li > a.activated{
   background-color: #00a8ff;
 }

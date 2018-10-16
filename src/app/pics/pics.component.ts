@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { Observable } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-pics',
@@ -9,12 +10,14 @@ import { Observable } from 'rxjs';
 })
 export class PicsComponent implements OnInit {
 
-  pics$: Object;
+  user$: Object;
 
-  constructor(private pic: DataService) { }
+  constructor(private route: ActivatedRoute, private data: DataService) {
+    this.route.params.subscribe( params => this.user$ = params.id );
+  }
 
   ngOnInit() {
-    this.pic.getPics().subscribe(data => this.pics$ = data);
+    this.data.getUser(this.user$).subscribe( data => this.user$ = data );
   }
 
 }

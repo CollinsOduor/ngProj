@@ -1,7 +1,7 @@
 <h1>Users</h1>
 <h4>Click user to see details</h4>
 
-<ul>
+<ul [@listStagger]="users$">
   <li *ngFor="let user of users$">
     <a routerLink="/details/{{user.id}}">{{ user.name }}</a>
     <ul>
@@ -11,6 +11,7 @@
           <li>{{ user.address.suite}}, {{ user.address.city }}</li>
           <div class="innerDetails">
             <br>
+            <li><a routerLink="/photos/{{user.id}}">Pic of {{ user.name }}</a></li>
             <li><a href="http://{{ user.website }}">{{ user.website }}</a></li>
             <li>{{ user.company.catchPhrase }}</li>
             <li><h5>Geolocation: {{ user.address.geo.lat }}, {{ user.address.geo.lng }}</h5></li>

@@ -10,6 +10,9 @@ import { UsersComponent } from './users/users.component';
 import { DetailsComponent } from './details/details.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PicsComponent } from './pics/pics.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -24,6 +27,8 @@ import { PicsComponent } from './pics/pics.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
