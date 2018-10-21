@@ -10,14 +10,16 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PicsComponent implements OnInit {
 
-  user$: Object;
+  pics$: Object;
 
-  constructor(private route: ActivatedRoute, private data: DataService) {
-    this.route.params.subscribe( params => this.user$ = params.id );
-  }
+  constructor(private data: DataService) { }
 
   ngOnInit() {
-    this.data.getUser(this.user$).subscribe( data => this.user$ = data );
+    this.data.getPics().subscribe(data => this.pics$ = data);
   }
+
+  public get singleCategory() {
+    return this.categories.filter((item, index) => index > 2 )
+ }
 
 }

@@ -1,3 +1,8 @@
-<p>
-  pics works!
-</p>
+<h1>Pics</h1>
+
+<ul>
+  <li *ngFor="let pic of pics$" style="height: 70px">
+      <img src="{{pic.url}}" style="height: 60px; width:80px;">
+      <h3>{{ pic.title }}</h3>
+  </li>
+</ul>

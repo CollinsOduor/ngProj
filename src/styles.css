@@ -52,3 +52,13 @@ body{
   font-weight: 1em;
   font-weight: 300;
 }
+
+img{
+  float: right;
+  border-radius: 4px;
+  background-color: none;
+  height: 120px;
+  width: 180px;
+  overflow: hidden;
+  margin-right: 100px;
+}
