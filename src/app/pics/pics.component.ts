@@ -18,8 +18,4 @@ export class PicsComponent implements OnInit {
     this.data.getPics().subscribe(data => this.pics$ = data);
   }
 
-  public get singleCategory() {
-    return this.categories.filter((item, index) => index > 2 )
- }
-
 }
